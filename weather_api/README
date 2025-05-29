@@ -15,6 +15,7 @@ A. INSTALL AND USE
     `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`
 
 4. In `weather/views.py`, enter your openweathermap.org api key (line no. 8).
+    Note: you can get your api key here: https://home.openweathermap.org/api_keys (registration is required).
 
 4. Start redis server with `systemctl start redis` (`sudo` is required. This command works on Ubuntu).
 
