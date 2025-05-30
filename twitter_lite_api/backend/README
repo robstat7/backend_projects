@@ -1,0 +1,47 @@
+### Twitter Lite API Project
+
+-----------------------------
+
+A. INSTALL
+
+1. Create a virtual environment for the project and activate it.
+
+2. Run `pip install -r requirements.txt`.
+
+3. Create a `.env` file in the project root and add a secret key like `SECRET_KEY=your-very-secret-django-key-here`
+
+    Note: Although not required, you can generate a secure secret key with:
+
+    `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`
+
+4. Run `python manage.py migrate twitter_lite` first.
+
+5. Then run `python manage.py migrate`.
+
+6. Run `python manage.py runserver`.
+
+
+B. Example Requests: 
+
+1. POST /api/users/signup/
+
+{
+"first_name": "<first-name>",
+"last_name": "<last-name>",
+"email": "<email>",
+"username": "<username>",
+"password": "<password>"
+}
+
+2. POST /api/users/login/
+
+{
+"email": "<email>",
+"password": "<password>"
+}
+
+3. API request to upload a file in tweet:
+
+$ http -f POST http://localhost:8000/api/users/1/tweets/ "Authorization: Token <your-token>" tweet="Check my photo!" files@/home/<username>/Downloads/IMG_5008.jpg
+
+4. Check `twitter_lite/urls.py` for the list of endpoints
